@@ -20,6 +20,7 @@ def index(request):
 
     content = {
         'form': form,
+        'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),
 
     }
     return render(request, 'index.html', content)
