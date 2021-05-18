@@ -184,9 +184,13 @@
       <h2>Search</h2>
       <form method="GET">
         {% csrf_token %}
-
+      <datalist id="games">
+          {% for game in games %}
+            <option value="{{ game }}">
+          {% endfor %}
+      </datalist>
         <div class="user-box">
-          <input type="text">
+          {{form.gameName}}
         </div>
             <button type="submit" href="#">
                 <span></span>
