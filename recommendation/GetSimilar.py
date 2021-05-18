@@ -61,9 +61,3 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
 
     return similarGames, gameShown
 
-
-
-cv = CountVectorizer(stop_words='english')
-vec_matrix = cv.fit_transform(dataset['combined words'])
-cosine_sim = cosine_similarity(vec_matrix, vec_matrix)
-
