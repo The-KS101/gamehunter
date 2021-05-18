@@ -4,8 +4,7 @@ import re
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-dataset = pd.read_csv('MetaCritic All games Gen 4 Draft 2.csv')
-
+dataset = {'shoe': 'car'}
 def LCS(a, names):
     lcsVal = []
     for i in names:
