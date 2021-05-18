@@ -1,0 +1,10 @@
+.env
+static/GamesBU
+GamesBU
+helper.py
+recommendation/helper.py
+populate_db.py
+recommendation/populate_db.py
+static/games
+games
+imgScrape.py
