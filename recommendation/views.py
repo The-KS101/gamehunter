@@ -7,8 +7,23 @@ import re
 
 # Create your views here.
 def index(request):
-    
-    return render(request, 'index.html')
+    if request.method == "GET":
+        form = gameSearched(request.GET)
+        if form.is_valid():
+            game = form.cleaned_data['gameName']
+            return redirect('similar_games', game, 'all')
+        else:
+            print(form.errors)
+    else:
+        form = gameSearched()
+        
+
+    content = {
+        'form': form,
+        'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),
+
+    }
+    return render(request, 'index.html', content)
 
 def simGames(request, game, console):
     console = None if console == 'all' else console
