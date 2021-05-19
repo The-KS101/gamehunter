@@ -47,15 +47,21 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
     gameShown = dataset['names'][idx]
     if console != None:
         eligible_index = dataset[dataset['platforms'] == console].index
+        print("get cos babe")
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
+        print("mad g")
         mostSimIndex = np.argsort(sims)
         mostSimElig = [i for i in mostSimIndex if i in eligible_index]
         mostSim = mostSimElig[:: -1][1:30]
-
+        print("we are here")
     else:
+        print("get cos babe")
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
+        print("mad g")
         mostSimIndex = np.argsort(sims)
         mostSim = mostSimIndex[:: -1][1:30]
+        print("we are here")
+
     similarGames = []
     if sort:
         simSort = {}
