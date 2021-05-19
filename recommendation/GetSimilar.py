@@ -40,7 +40,8 @@ def get_name(title):
 
 def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
     names, idx = get_name(title)
-
+    cv = CountVectorizer(stop_words='english')
+    vec_matrix = cv.fit_transform(dataset['combined words'])
 
     gameShown = dataset['names'][idx]
     if console != None:
@@ -74,9 +75,5 @@ def cosine_sim_row(m, n):
     m = np.squeeze(np.asarray(m.A))
     sims = [np.dot(m, np.squeeze(np.asarray(i.A)))/(np.linalg.norm(m)*np.linalg.norm(np.squeeze(np.asarray(i.A)))) for i in n ]
     return sims
-
-cv = CountVectorizer(stop_words='english')
-vec_matrix = cv.fit_transform(dataset['combined words'])
-print(vec_matrix.data.nbytes)
 
 
