@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     'recommendation',
     'storages',
-    'background_tasks',
+    'background_task',
 ]
 
 MIDDLEWARE = [
