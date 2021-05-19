@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import re
+from sys import getsizeof
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -23,7 +24,8 @@ def LCS(a, names):
         lcsVal.append(maxVal)
     return lcsVal.index(max(lcsVal))
 
-def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
+
+def get_name(title):
     names = dataset['names'].str.lower()
     
     try:
@@ -35,17 +37,23 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
         print('Given Name not found, displaying most similar name, {}'
               .format(dataset['names'][idx]))
 
+    return names, idx
+
+
+def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
+    names, idx = get_name(title)
+
 
     gameShown = dataset['names'][idx]
     if console != None:
         eligible_index = dataset[dataset['platforms'] == console].index
-        sims = cosine_sim[idx]
+        sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
         mostSimIndex = np.argsort(sims)
         mostSimElig = [i for i in mostSimIndex if i in eligible_index]
         mostSim = mostSimElig[:: -1][1:50]
 
     else:
-        sims = cosine_sim[idx]
+        sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
         mostSimIndex = np.argsort(sims)
         mostSim = mostSimIndex[:: -1][1:50]
     similarGames = []
@@ -62,10 +70,17 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
 
     return similarGames, gameShown
 
-
+def cosine_sim_row(m, n):
+    sims = []
+    m = np.squeeze(np.asarray(m.A))
+    for i in n:
+        array_i = np.squeeze(np.asarray(i.A))
+        cos_sim = np.dot(m, array_i)/(np.linalg.norm(m)*np.linalg.norm(array_i))
+        sims.append(cos_sim)
+    return sims
 
 cv = CountVectorizer(stop_words='english')
 vec_matrix = cv.fit_transform(dataset['combined words'])
-print(vec_matrix[0])
-cosine_sim = cosine_similarity(vec_matrix, vec_matrix)
+print(vec_matrix.data.nbytes)
+
 
