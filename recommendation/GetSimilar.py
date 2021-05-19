@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import re
-from sys import getsizeof
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -47,17 +45,13 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
     gameShown = dataset['names'][idx]
     if console != None:
         eligible_index = dataset[dataset['platforms'] == console].index
-        print("get cos babe")
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
-        print("mad g")
+        print(f"look")
         mostSimIndex = np.argsort(sims)
         mostSimElig = [i for i in mostSimIndex if i in eligible_index]
         mostSim = mostSimElig[:: -1][1:30]
-        print("we are here")
     else:
-        print("get cos babe")
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
-        print("mad g")
         mostSimIndex = np.argsort(sims)
         mostSim = mostSimIndex[:: -1][1:30]
         print("we are here")
@@ -77,12 +71,8 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
     return similarGames, gameShown
 
 def cosine_sim_row(m, n):
-    sims = []
     m = np.squeeze(np.asarray(m.A))
-    for i in n:
-        array_i = np.squeeze(np.asarray(i.A))
-        cos_sim = np.dot(m, array_i)/(np.linalg.norm(m)*np.linalg.norm(array_i))
-        sims.append(cos_sim)
+    sims = [np.dot(m, np.squeeze(np.asarray(i.A)))/(np.linalg.norm(m)*np.linalg.norm(np.squeeze(np.asarray(i.A)))) for i in n ]
     return sims
 
 cv = CountVectorizer(stop_words='english')
