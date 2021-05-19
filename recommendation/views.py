@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from .forms import gameSearched
 from . import GetSimilar
 from .models import Games
+import time
 import re
 
 
@@ -14,16 +15,19 @@ def index(request):
             game = form.cleaned_data['gameName']
             return redirect('similar_games', game, 'all')
         else:
-            print(form.errors)
+            pass
     else:
         form = gameSearched()
         
 
     content = {
         'form': form,
-        'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),
 
     }
+    start = time.time()
+    content.update({'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),})
+    end = time.time()
+    print(f"It took {end-start}s to run")
     return render(request, 'index.html', content)
 
 def simGamesJson(request, game, console):
