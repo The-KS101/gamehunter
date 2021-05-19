@@ -114,6 +114,6 @@ def simGamesSorted(request, game, console, sortBy, ordChoice):
 
 def prep(a):
     a = re.sub('[^A-Za-z0-9 ]+', '', a)
-    a = re.sub(' ', '+', a)
+    # a = re.sub(' ', '+', a)
     a += '.jpg'
     return a

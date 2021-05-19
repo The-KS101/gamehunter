@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import time
 
 dataset = pd.read_csv('MetaCritic All games Gen 4 Draft 2.csv')
 
@@ -42,7 +43,7 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
     names, idx = get_name(title)
     cv = CountVectorizer(stop_words='english')
     vec_matrix = cv.fit_transform(dataset['combined words'])
-
+    vec_matrix = vec_matrix.A
     gameShown = dataset['names'][idx]
     if console != None:
         eligible_index = dataset[dataset['platforms'] == console].index
@@ -72,8 +73,11 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
     return similarGames, gameShown
 
 def cosine_sim_row(m, n):
-    m = np.squeeze(np.asarray(m.A))
-    sims = [np.dot(m, np.squeeze(np.asarray(i.A)))/(np.linalg.norm(m)*np.linalg.norm(np.squeeze(np.asarray(i.A)))) for i in n ]
+    start = time.time()
+    print(type(m))
+    sims = [np.dot(m, i)/(np.linalg.norm(m)*np.linalg.norm(i)) for i in n ]
+    end = time.time()
+    print(f"Code ran in {end-start}s")
     return sims
 
 
