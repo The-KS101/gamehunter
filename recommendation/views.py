@@ -42,7 +42,7 @@ def simGames(request, game, console):
     
 
     imgNames = [prep(i.name) for i in gameDets]
-                
+    print("atide ooo")
     gameDets = zip(gameDets, platforms, imgNames)
     if request.method == "GET":
         form = gameSearched(request.GET)
