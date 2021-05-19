@@ -30,10 +30,12 @@ def simGames(request, game, console):
     similarGames, gameShown = GetSimilar.getRecommend(game, console=console)
     gameDets = []
     platforms = []
-    
+    count = 0
     for i in similarGames:
         if i != gameShown.lower():
             if console:
+                count += 1
+                print(count)
                 gameDets.append(Games.objects.get(name__iexact=i, platform=console))
                 platforms.append([console])
             else:
