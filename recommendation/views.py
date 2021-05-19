@@ -7,6 +7,10 @@ import re
 
 
 # Create your views here.
+def gameListJson(request):
+    games = Games.objects.values_list('name', flat=True).distinct().order_by('name')
+    return JsonResponse(list(games), safe=False)
+
 def index(request):
     if request.method == "GET":
         form = gameSearched(request.GET)
@@ -21,7 +25,6 @@ def index(request):
 
     content = {
         'form': form,
-        'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),
 
     }
     return render(request, 'index.html', content)
@@ -66,7 +69,6 @@ def simGames(request,  game, console):
 
     content = {
         'form': form,
-        'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),
         'gameDets': gameDets,
         'gameShowing': gameShown,
         'console': console,
@@ -110,7 +112,6 @@ def simGamesSorted(request, game, console, sortBy, ordChoice):
 
     content = {
         'form': form,
-        'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),
         'gameDets': gameDets,
         'gameShowing': gameShown,
     }

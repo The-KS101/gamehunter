@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game Hunt</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  
 </head>
 <body>
     
@@ -184,6 +189,9 @@
       <h2>Search</h2>
       <form method="GET">
         {% csrf_token %}
+      <datalist id="games">
+        
+      </datalist>
         <div class="user-box">
           {{form.gameName}}
         </div>
@@ -202,5 +210,28 @@
 </body>
 </html>
 
+<script>
+  const games = document.getElementById('games')
+  var frag = document.createDocumentFragment();
+
+  $.ajax({
+    type: 'GET',
+    url: '/games-json',
+    success: function(response){
+      for (const item of response){
+        var option = document.createElement("OPTION");
+        option.textContent = item;
+        option.value = item;
+        frag.appendChild(option);
+      }
+
+      games.appendChild(frag)
+},
+    error: function(response){
+      dataBox.innerHTML = '<p>Failed to get Similar Games, please try again later.</p>'
+    }
+
+  })
+</script>
 
 

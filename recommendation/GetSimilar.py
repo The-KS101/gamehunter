@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import time
 
 def LCS(a, names):
     lcsVal = []
@@ -73,11 +72,8 @@ def getRecommend(title, console=None, sort=None, order=None):
     return similarGames, gameShown
 
 def cosine_sim_row(m, n):
-    start = time.time()
     m = np.squeeze(np.asarray(m.A))
     sims = [np.dot(m, np.squeeze(np.asarray(i.A)))/(np.linalg.norm(m)*np.linalg.norm(np.squeeze(np.asarray(i.A)))) for i in n ]
-    end = time.time()
-    print(f"Code ran in {end-start}s")
     return sims
 
 

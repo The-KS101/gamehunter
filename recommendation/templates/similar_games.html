@@ -87,9 +87,7 @@
             {% csrf_token %}
 
             <datalist id="games">
-              {% for game in games %}
-                <option value="{{ game }}">
-              {% endfor %}
+
             </datalist>
             
             <div class="title" >
@@ -137,17 +135,36 @@
 
 
 <script>
-  console.log("Hello World!")
 
   const spinnerBox =document.getElementById('spinner-box')
   const dataBox = document.getElementById('data-box')
+  const games = document.getElementById('games')
+  var frag = document.createDocumentFragment();
+
+  $.ajax({
+    type: 'GET',
+    url: '/games-json',
+    success: function(response){
+      for (const item of response){
+        var option = document.createElement("OPTION");
+        option.textContent = item;
+        option.value = item;
+        frag.appendChild(option);
+      }
+
+      games.appendChild(frag)
+},
+    error: function(response){
+      dataBox.innerHTML = '<p>Failed to get Similar Games, please try again later.</p>'
+    }
+
+  })
 
   $.ajax({
     type: 'GET',
     url: '/similar-games-json/{{gameShowing}}/filter%3F{{console}}',
     success: function(response){
       spinnerBox.classList.add('not-visible')
-      console.log(response)
       response['gameDets'].forEach((element, index) => {
         dataBox.innerHTML += `
         <div style='width: 100%;display: flex; justify-content: center; align-items: center; margin-bottom: 5px;'>\
