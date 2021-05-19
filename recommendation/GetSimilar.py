@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
-from background_task import background
 from sklearn.metrics.pairwise import cosine_similarity
 
 dataset = pd.read_csv('MetaCritic All games Gen 4 Draft 2.csv')
@@ -72,7 +71,6 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
 
     return similarGames, gameShown
 
-@background(schedule=35)
 def cosine_sim_row(m, n):
     m = np.squeeze(np.asarray(m.A))
     sims = [np.dot(m, np.squeeze(np.asarray(i.A)))/(np.linalg.norm(m)*np.linalg.norm(np.squeeze(np.asarray(i.A)))) for i in n ]
