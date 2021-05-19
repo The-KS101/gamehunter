@@ -50,12 +50,12 @@ def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
         mostSimIndex = np.argsort(sims)
         mostSimElig = [i for i in mostSimIndex if i in eligible_index]
-        mostSim = mostSimElig[:: -1][1:50]
+        mostSim = mostSimElig[:: -1][1:30]
 
     else:
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
         mostSimIndex = np.argsort(sims)
-        mostSim = mostSimIndex[:: -1][1:50]
+        mostSim = mostSimIndex[:: -1][1:30]
     similarGames = []
     if sort:
         simSort = {}
