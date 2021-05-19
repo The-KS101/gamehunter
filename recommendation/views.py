@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import gameSearched
 from . import GetSimilar
@@ -25,7 +26,7 @@ def index(request):
     }
     return render(request, 'index.html', content)
 
-def simGames(request, game, console):
+def simGamesJson(request, game, console):
     console = None if console == 'all' else console
     similarGames, gameShown = GetSimilar.getRecommend(game, console=console)
     gameDets = []
@@ -33,15 +34,20 @@ def simGames(request, game, console):
     for i in similarGames:
         if i != gameShown.lower():
             if console:
-                gameDets.append(Games.objects.get(name__iexact=i, platform=console))
+                gameDets.append(Games.objects.values().get(name__iexact=i, platform=console))
                 platforms.append([console])
             else:
-                gameDets.append(Games.objects.filter(name__iexact=i)[0])
+                gameDets.append(Games.objects.values().filter(name__iexact=i)[0])
                 platforms.append([j.platform for j in Games.objects.filter(name__iexact=i)])
     
 
-    imgNames = [prep(i.name) for i in gameDets]
-    gameDets = zip(gameDets, platforms, imgNames)
+    imgNames = [prep(i['name']) for i in gameDets]
+    return JsonResponse({'gameDets': gameDets, 'platforms': platforms, 'imgNames': imgNames,}, safe=False)
+
+
+def simGames(request,  game, console):
+    gameDets = ['as']
+    gameShown = game
     if request.method == "GET":
         form = gameSearched(request.GET)
         if form.is_valid():
@@ -63,6 +69,7 @@ def simGames(request, game, console):
         'games' : Games.objects.values_list('name', flat=True).distinct().order_by('name'),
         'gameDets': gameDets,
         'gameShowing': gameShown,
+        'console': console,
     }
     
     return render(request, 'similar_games.html', content)

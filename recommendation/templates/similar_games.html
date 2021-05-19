@@ -6,11 +6,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Recommended Games</title>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  
     
-    <style>
+</head>
+<style>
+
+    .not-visible{
+      display: none;
+    }
+
     h3{
        color: white; 
     }
@@ -24,170 +34,56 @@
       font-family: sans-serif;
       background: linear-gradient(#141e30, #243b55);
     }
-    
-    .login-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 400px;
-      padding: 40px;
-      transform: translate(-50%, -50%);
-      background: rgba(0,0,0,.5);
-      box-sizing: border-box;
-      box-shadow: 0 15px 25px rgba(0,0,0,.6);
-      border-radius: 10px;
+
+    .title{
+      flex: 5;
+    }
+
+    .plat{
+      flex: 2;
+    }
+
+    .sort{
+      flex: 2;
     }
     
-    .login-box h2 {
-      margin: 0 0 30px;
-      padding: 0;
-      color: #fff;
-      text-align: center;
-    }
+    .order{
+      flex: 2;
+    } 
     
-    .login-box .user-box {
-      position: relative;
+    form button{
+      flex: 1;
+
     }
-    
-    .login-box .user-box input {
+
+    #id_gameName{
       width: 100%;
-      padding: 10px 0;
-      font-size: 16px;
-      color: #fff;
-      margin-bottom: 30px;
-      border: none;
-      border-bottom: 1px solid #fff;
-      outline: none;
-      background: transparent;
+      padding: 10px;
     }
-    .login-box .user-box label {
-      position: absolute;
-      top:0;
-      left: 0;
-      padding: 10px 0;
-      font-size: 16px;
-      color: #fff;
-      pointer-events: none;
-      transition: .5s;
-    }
-    
-    .login-box .user-box input:focus ~ label,
-    .login-box .user-box input:valid ~ label {
-      top: -20px;
-      left: 0;
-      color: #03e9f4;
-      font-size: 12px;
-    }
-    
-    .login-box form button {
-      position: relative;
-      display: inline-block;
-      padding: 10px 20px;
-      color: #03e9f4;
-      background-color: transparent;
-      font-size: 16px;
-      text-decoration: none;
-      text-transform: uppercase;
-      overflow: hidden;
-      transition: .5s;
-      margin-top: 40px;
-      letter-spacing: 4px
-    }
-    
-    .login-box button:hover {
-      background: #03e9f4;
-      color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 5px #03e9f4,
-                  0 0 25px #03e9f4,
-                  0 0 50px #03e9f4,
-                  0 0 100px #03e9f4;
-    }
-    
-    .login-box button span {
-      position: absolute;
-      display: block;
-    }
-    
-    .login-box button span:nth-child(1) {
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #03e9f4);
-      animation: btn-anim1 1s linear infinite;
-    }
-    
-    @keyframes btn-anim1 {
-      0% {
-        left: -100%;
-      }
-      50%,100% {
-        left: 100%;
-      }
-    }
-    
-    .login-box button span:nth-child(2) {
-      top: -100%;
-      right: 0;
-      width: 2px;
+
+    #id_platforms{
       height: 100%;
-      background: linear-gradient(180deg, transparent, #03e9f4);
-      animation: btn-anim2 1s linear infinite;
-      animation-delay: .25s
-    }
-    
-    @keyframes btn-anim2 {
-      0% {
-        top: -100%;
-      }
-      50%,100% {
-        top: 100%;
-      }
-    }
-    
-    .login-box button span:nth-child(3) {
-      bottom: 0;
-      right: -100%;
       width: 100%;
-      height: 2px;
-      background: linear-gradient(270deg, transparent, #03e9f4);
-      animation: btn-anim3 1s linear infinite;
-      animation-delay: .5s
     }
-    
-    @keyframes btn-anim3 {
-      0% {
-        right: -100%;
-      }
-      50%,100% {
-        right: 100%;
-      }
-    }
-    
-    .login-box button span:nth-child(4) {
-      bottom: -100%;
-      left: 0;
-      width: 2px;
+
+    #id_sortOpt{
       height: 100%;
-      background: linear-gradient(360deg, transparent, #03e9f4);
-      animation: btn-anim4 1s linear infinite;
-      animation-delay: .75s
+      width: 100%;
     }
-    
-    @keyframes btn-anim4 {
-      0% {
-        bottom: -100%;
-      }
-      50%,100% {
-        bottom: 100%;
-      }
+
+    #id_ordChoice{
+      height: 100%;
+      width: 100%;
     }
-    
+
+   
+
     </style>
-    
-    <div>
-        <form method="GET">
+
+<body>
+    <div style="">
+      <div style="padding-top: 10px;">
+        <form method="GET" style="display: flex;width: 70%; height:100%; margin: auto; padding-top:10px;">
             {% csrf_token %}
 
             <datalist id="games">
@@ -195,59 +91,96 @@
                 <option value="{{ game }}">
               {% endfor %}
             </datalist>
-
-            <div class="user-box">
+            
+            <div class="title" >
               {{form.gameName}}
             </div>
-            <div class="user-box">
+            <div class="plat">
               {{form.platforms}}
             </div>
-            <div class="user-box">
+            <div class="sort">
               {{form.sortOpt}}
             </div>
-            <div class="user-box">
+            <div class="order">
               {{form.ordChoice}}
             </div>
-                <button type="submit" href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Submit
-                </button>
+            <button class="btn-warning" type="submit" href="#">
+                Submit
             </button>
           </form>
+      div>
     </div>
+    
 
+    
     <div style="padding-top: 30px; margin: 30px;">
         <h2 style="color: white;">Showing similar Games to {{gameShowing}}</h2>
-        {% for game, j, img in gameDets %}
-          <div style="width: 100%;display: flex; justify-content: center; align-items: center; margin-bottom: 5px;">
-            <div style=" flex: 1;">
-              <img src="{% static '' %}games/{{img}}" alt="{{game.name}}" style="display: block; margin: auto;">
-            </div>
-            <div style="color: white; display: inline-block; width:70%; height: inherit; flex: 3;">
-              <div style="display: block; margin: auto; ">
-                <h3 style="margin:10px;"> {{game.name}}</h3>
-                <h6 style="margin:10px;"> Platform: |{% for k in j %} <span> {{k}} | </span> {% endfor %}</h6>
-                <h6 style="margin:10px;"> Release: {{game.release_date}}</h6>
-                <h3 style="margin:10px;"> Rating: {{game.meta_score}}</h3>
-                <p  style="margin:10px;"> Description: {{game.gameDesc}}</p>
-                <h5 style="margin:10px;"> User Score: {{game.user_score}}</h5>
-                <h6 style="margin:10px;"> Age: {{game.age_rating}}</h6>
-                <h5 style="margin:10px;"> Developers: {{game.Devs}}</h5>
-                <h4 style="margin:10px;"> Genres: {{game.Genres}}</h4>
-            </div>
-            
-            </div>
-           
-          </div>
-          <hr>  
-            {% endfor %}
+        <div id="spinner-box" class="text-center mt-3">
+          <div class="spinner-border text-warning" role="status"></div>
+        </div>
+        <div id="data-box">
+          
+        </div>
+        
     </div>
+    
+    <div class="container-fluid pb-3">
+      <footer style="color: white;">
+        <p class="text-center">Devloped with 💖 by Sesan </p>
+        </footer>
+    </div>
+      
     
 
 </body>
 </html>
 
 
+<script>
+  console.log("Hello World!")
+
+  const spinnerBox =document.getElementById('spinner-box')
+  const dataBox = document.getElementById('data-box')
+
+  $.ajax({
+    type: 'GET',
+    url: '/similar-games-json/{{gameShowing}}/filter%3F{{console}}',
+    success: function(response){
+      spinnerBox.classList.add('not-visible')
+      console.log(response)
+      response['gameDets'].forEach((element, index) => {
+        dataBox.innerHTML += `
+        <div style='width: 100%;display: flex; justify-content: center; align-items: center; margin-bottom: 5px;'>\
+            <div style=' flex: 1;'>\
+              <img src='{% static '' %}games/${response['imgNames'][index]}' alt='${element.name}' style='display: block; margin: auto;'>\
+            </div>\
+            <div style='color: white; display: inline-block; width:70%; height: inherit; flex: 3;'>\
+                    <div style='display: block; margin: auto; '>\
+                      <h3 style='margin:10px;'> ${element.name}</h3>\
+                      <h6 style='margin:10px;'> Platform:  ${response['platforms'][index]}</h6>\
+                      <h6 style='margin:10px;'> Release: ${element.release_date}</h6>\
+                      <h6 style='margin:10px;'> Rating: ${element.meta_score}</h6>\
+                      <p  style='margin:10px;'> Description: ${element.gameDesc}</p>\
+                      <h6 style='margin:10px;'> User Score: ${element.user_score}</h6>\
+                      <h6 style='margin:10px;'> Age: ${element.age_rating}</h6>\
+                      <h6 style='margin:10px;'> Developers: ${element.Devs}</h6>\
+                      <h6 style='margin:10px;'> Genres: ${element.Genres}</h6>\
+                  </div>\
+          </div>
+          
+        </div>
+        <hr style='background-color: rgb(238, 238, 238);'> 
+         
+`
+        
+
+      });
+    },
+    error: function(response){
+      spinnerBox.classList.add('not-visible')
+      dataBox.innerHTML = '<p>Failed to get Similar Games, please try again later.</p>'
+    }
+
+  })
+
+</script>
