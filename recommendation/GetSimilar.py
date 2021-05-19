@@ -4,8 +4,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import time
 
-dataset = pd.read_csv('MetaCritic All games Gen 4 Draft 2.csv')
-
 def LCS(a, names):
     lcsVal = []
     for i in names:
@@ -24,7 +22,7 @@ def LCS(a, names):
     return lcsVal.index(max(lcsVal))
 
 
-def get_name(title):
+def get_name(title, dataset):
     names = dataset['names'].str.lower()
     
     try:
@@ -39,8 +37,10 @@ def get_name(title):
     return names, idx
 
 
-def getRecommend(title, dataset=dataset, console=None, sort=None, order=None):
-    names, idx = get_name(title)
+def getRecommend(title, console=None, sort=None, order=None):
+    dataset = pd.read_csv('MetaCritic All games Gen 4 Draft 2.csv')
+
+    names, idx = get_name(title, dataset)
     cv = CountVectorizer(stop_words='english', max_features=10000)
     vec_matrix = cv.fit_transform(dataset['combined words'])
 
