@@ -21,7 +21,7 @@ class gameSearched(forms.Form):
                 (False, 'Ascending'),
                 ]
 
-    gameName = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Game', 'list': 'games'}), required=True, error_messages={'required': 'Enter a Game Name'})
+    gameName = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Discover new games...', 'list': 'games'}), required=True, error_messages={'required': 'Enter a Game Name'})
     platforms = forms.ChoiceField(choices=CONSOLE_CHOICE, required=False)
     sortOpt = forms.ChoiceField(choices=SORT_CHOICE, required=False)
     ordChoice = forms.ChoiceField(choices=ASCDSC, required=False)
