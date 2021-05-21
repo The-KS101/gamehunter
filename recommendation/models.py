@@ -5,7 +5,7 @@ class Games(models.Model):
     platform = models.CharField(max_length=50)
     release_date = models.DateField()
     meta_score = models.IntegerField()
-    gameDesc = models.CharField(max_length=50)
+    gameDesc = models.CharField(max_length=10000)
     user_score = models.FloatField()
     age_rating = models.CharField(max_length=50)
     Devs = models.CharField(max_length=50)

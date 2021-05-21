@@ -36,7 +36,7 @@ def get_name(title, dataset):
     return names, idx
 
 
-def getRecommend(title, console=None, sort=None, order=None):
+def getRecommend(title, console=None):
     dataset = pd.read_csv('MetaCritic All games Gen 4 Draft 2.csv')
 
     names, idx = get_name(title, dataset)
@@ -47,27 +47,16 @@ def getRecommend(title, console=None, sort=None, order=None):
     if console != None:
         eligible_index = dataset[dataset['platforms'] == console].index
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
-        print(f"look")
         mostSimIndex = np.argsort(sims)
         mostSimElig = [i for i in mostSimIndex if i in eligible_index]
-        mostSim = mostSimElig[:: -1][1:30]
+        mostSim = mostSimElig[:: -1][1:50]
     else:
         sims = cosine_sim_row(vec_matrix[idx], vec_matrix)
         mostSimIndex = np.argsort(sims)
-        mostSim = mostSimIndex[:: -1][1:30]
-        print("we are here")
+        mostSim = mostSimIndex[:: -1][1:50]
 
     similarGames = []
-    if sort:
-        simSort = {}
-        for i in mostSim:
-            simSort.update({names[i]: dataset[sort][i]})
-        rev = True if order=="True" else False
-        simSorted = sorted(simSort.items(), key=lambda x: x[1], reverse=rev)
-        for key in simSorted:
-            similarGames.append(key[0])
-    else:
-        [similarGames.append(names[i]) for i in mostSim if names[i] not in similarGames]
+    [similarGames.append(names[i]) for i in mostSim if names[i] not in similarGames]
 
     return similarGames, gameShown
 
