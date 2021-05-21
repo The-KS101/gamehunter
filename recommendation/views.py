@@ -51,9 +51,47 @@ def simGamesJson(request, game, console):
     imgNames = [prep(i['name']) for i in gameDets]
     return JsonResponse({'gameDets': gameDets, 'platforms': platforms, 'imgNames': imgNames,}, safe=False)
 
+def featured_games(request):
+    featured = Games.objects.values().filter(featured=True)
+    imgNames = [prep(i['name']) for i in featured]
+
+    if request.method == "GET":
+        form = gameSearched(request.GET)
+        if form.is_valid():
+            game = form.cleaned_data['gameName']
+            platform = form.cleaned_data['platforms']
+            return redirect('similar_games', game, platform)
+        else:
+            print(form.errors)
+    else:
+        form = gameSearched()
+
+    content = {
+        'form': form,
+        'featured': featured,
+        'imgs': imgNames,
+    }
+
+    return render(request, "featured_games.html", content)
+
+def about(request):
+    if request.method == "GET":
+        form = gameSearched(request.GET)
+        if form.is_valid():
+            game = form.cleaned_data['gameName']
+            platform = form.cleaned_data['platforms']
+            return redirect('similar_games', game, platform)
+        else:
+            print(form.errors)
+    else:
+        form = gameSearched()
+
+    content = {
+        'form': form,
+    }
+    return render(request, 'about.html', content)
 
 def simGames(request,  game, console):
-    gameDets = ['as']
     gameShown = game
     if request.method == "GET":
         form = gameSearched(request.GET)
@@ -68,7 +106,6 @@ def simGames(request,  game, console):
 
     content = {
         'form': form,
-        'gameDets': gameDets,
         'gameShowing': gameShown,
         'console': console,
     }

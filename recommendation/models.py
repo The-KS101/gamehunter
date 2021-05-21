@@ -11,6 +11,7 @@ class Games(models.Model):
     Devs = models.CharField(max_length=50)
     Genres = models.CharField(max_length=50)
     weighed_score = models.FloatField()
+    featured = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

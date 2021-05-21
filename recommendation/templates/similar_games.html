@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,10 @@
 </head>
 <style>
     
+    a{
+      text-decoration: none;
+      color: white;
+    }
         
     html{
       height: 100%;
@@ -160,7 +163,7 @@
       font-weight: 400;
       font-size: 24px;
       line-height: 29px;
-
+      flex: 2;
       color: #E6E6E6;
     }
 
@@ -298,8 +301,8 @@
             <a href="/" style="text-decoration: none;"><h4 class="title-text">gamehunt</h4></a>
           </div>
           <div class="nav-links d-flex ">
-            <h6 id="elems">About</h6>
-            <h6 id="elems" >Featured Games</h6>
+            <h6 id="elems"><a href="{% url 'about' %}">About</a> </h6>
+            <h6 id="elems" ><a href="{% url 'featured_games' %}">Featured Games</a></h6>
             <!-- <div id='elems frame' style="margin-left: 25px;"><h6 id="login">Login</h6></div> -->
             
           </div>
@@ -364,9 +367,9 @@
         
     </div>
     
-    <div class="container-fluid pt-3">
+    <div class="container-fluid pt-2">
       <footer style="color: white; font-family: 'Montserrat', sans-serif;">
-        <p class="text-center">Developed with 💖 by <a style="color: white;" target="_blank" href="https://sesan.netlify.app"><span> Sesan</span></a> </p>
+        <p class="text-center">Developed with 💖 by <a style="color: white; text-decoration: underline;" target="_blank" href="https://sesan.netlify.app"><span> Sesan</span></a> </p>
         </footer>
     </div>
     </div> 
@@ -385,7 +388,8 @@
   const buttonRight = document.getElementById('slideRight');
   const buttonLeft = document.getElementById('slideLeft');
   var frag = document.createDocumentFragment();
-
+  const gameName= "{{gameShowing}}".replace("#", "");
+  console.log(gameName)
 
   $(document).on("click", '.right',function(){
     $('#hold_images').animate({scrollLeft: '+=1000'}, 300);
@@ -430,13 +434,13 @@
 
   $.ajax({
     type: 'GET',
-    url: '/similar-games-json/{{gameShowing}}/filter%3F{{console}}',
+    url: `/similar-games-json/${gameName}/filter%3F{{console}}`,
     success: function(response){
       spinnerBox.classList.add('not-visible')
       response['gameDets'].forEach((element, index) => {
         img.innerHTML += `
             <div class='games_div' data-similarity="${index}" data-name="${element.name}" data-rating="${element.meta_score}" data-release="${element.release_date}">
-              <div onclick="openTab(${index})" href="#dets${index}" class="imgDiv">\
+              <div onclick="openTab(${index})" class="imgDiv">\
                 <img class="my_img" width=230px height=300px src='{% static '' %}games/${response['imgNames'][index]}' alt='${element.name}'>\
               </div>
               
