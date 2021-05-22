@@ -138,8 +138,8 @@
         color: white;
         font-size: 10px;
         font-family: 'Montserrat', sans-serif;
-        color: white;
         outline: none;
+        cursor: pointer;
       }
   
       #id_platforms option{
@@ -402,8 +402,9 @@
         color: white;
         font-size: 10px;
         font-family: 'Montserrat', sans-serif;
-        color: white;
         outline: none;
+        cursor: pointer;
+
       }
   
       #id_platforms option{
@@ -663,8 +664,9 @@
         color: white;
         font-size: 12px;
         font-family: 'Montserrat', sans-serif;
-        color: white;
         outline: none;
+        cursor: pointer;
+
       }
   
       #id_platforms option{
@@ -925,9 +927,8 @@
         color: white;
         font-size: 15px;
         font-family: 'Montserrat', sans-serif;
-        color: white;
         outline: none;
-  
+        cursor: pointer;
       }
   
       #id_platforms option{

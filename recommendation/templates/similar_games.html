@@ -12,303 +12,31 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{% static 'styles/similar.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     
 </head>
-<style>
-    
-    a{
-      text-decoration: none;
-      color: white;
-    }
-        
-    html{
-      height: 100%;
-    }
-    body {
-    height: 100%;
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
-
-    }
-    .home{
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      min-height: 100%;
-      background-image: linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero4.jpg'%}");
-      background-image: -moz-linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero4.jpg'%}");
-      background-image: -webkit-linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero4.jpg'%}");
-      background-image: -o-linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero4.jpg'%}");
-      background-size: cover;
-    }
-
-    /*Nav bar section*/
-    .nav{
-      width: 95%;
-      margin: 20px auto;
-    }
-
-    .titleElem{
-          flex: 1;
-        }
-
-    .title-text{
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 29.1837px;
-      line-height: 36px;
-    }
-
-    .nav-links{
-      flex: 2;
-    }
-
-
-    #elems{
-      margin: auto;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 17px;
-      color: white;
-      
-    }
-
-    /*Nav Search section*/
-    .hero-search{
-      flex: 4;
-    }
-
-    .hero-search form{
-      width: 100%;
-    }
-
-    #id_gameName{
-      width: 70%;
-      outline: none;
-      border: 1px;
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-      background-color: rgba(255, 255, 255, 0.344);
-      color: white;
-      
-    }
-
-    #id_gameName[type="text"]{
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      padding-left: 20px;
-      font-weight: 400;
-      font-size: 15px;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-    }
-
-    #id_gameName::placeholder{
-      color: white;
-    }
-
-    #id_gameName::-ms-input-placeholder{
-      color: white;
-    }
-
-    #id_gameName::-ms-value{
-      color: white;
-    }
-    
-    #id_platforms{
-      border: none;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.344);
-      color: white;
-      font-size: 15px;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-    }
-
-    #id_platforms option{
-      background: rgba(0, 0, 0, 0.761);
-      color: #fff;
-      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-      font-size: 15px;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-    }
-
-    #submit{
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 8px 15px 8px 15px;
-    border: none;
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
-    color: white;
-  }
-
-/* Game searched section */
-    .game-display{
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 29px;
-      flex: 2;
-      color: #E6E6E6;
-    }
-
-    .sort{
-      margin-top: 13px;;
-    }
-
-    .sort-select{
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 17px;
-      cursor: pointer;
-    }
-
-    .sort h6{
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 17px;
-      color: white;
-      margin: auto 15px;
-      transition: all .2s ease-in-out;
-      cursor: pointer;
-    }
-
-    .sort h6:hover{
-      transform: scale(1.1);
-      text-decoration: underline;
-    }
-    
-    
-
-
-    /*******EXPERIMENT************************************/
-
-  .not-visible{
-    display: none;
-  }
-
-#hold_images{
-  display: grid;
-  grid-gap: 15px;
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  grid-template-columns: repeat(10, minmax(230px,1fr));
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(230px,1fr);
-  grid-template-rows: minmax(300px, 1fr);
-}
-
-
-
-.closebtn {
-  float: right;
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
-  margin: 10px 0 0 20px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.imgDiv{
-  cursor: pointer;
-}
-
-#hold_images > div div img{
-  border-radius: 2px;
-}
-
-#data-box{
-  width: 100%;
-  min-height: 100px;
-}
-
-.details{
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 16px;
-  line-height: 20px;
-  color: #E6E6E6;
-  margin: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: rgba(0, 0, 0, 0.357);
-  border: 2px solid;
-  border-radius: 5px;
-  border-image-slice: 1;
-  --angle: 0deg;
-  /* … */
-  animation: 2s rotate linear infinite;
-  border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-  padding: 2px 10px;
-
-}
-
-
-.right, .left{
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 10px;
-  cursor: pointer;
-
-}
-
-
-
-/***************************************************************/
-
-    @property --angle {
-      syntax: '<angle>';
-      initial-value: 0deg;
-      inherits: false;
-    }
-
-  @keyframes rotate {
-  to {
-    --angle: 360deg;
-  }
-}}
-
-    </style>
 
 <body>
-    <div class="home">
+    <div class="home" style="background-image: linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero4.jpg'%}); background-image: -moz-linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero4.jpg'%}); background-image: -webkit-linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero4.jpg'%}); background-image: -o-linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero4.jpg'%} ;">
       <!--Navigation Bar section-->
       <div class="nav navbar">
-        <div class="d-flex w-100">
+        <div class="d-flex w-100 navigate">
           <div class="titleElem">
             <a href="/" style="text-decoration: none;"><h4 class="title-text">gamehunt</h4></a>
           </div>
           <div class="nav-links d-flex ">
             <h6 id="elems"><a href="{% url 'about' %}">About</a> </h6>
-            <h6 id="elems" ><a href="{% url 'featured_games' %}">Featured Games</a></h6>
+            <h6 id="elems" class="sect"><a href="{% url 'featured_games' %}">Featured Games</a></h6>
             <!-- <div id='elems frame' style="margin-left: 25px;"><h6 id="login">Login</h6></div> -->
             
           </div>
         <!--Nav bar Search-->
           <div class="hero-search">
-            <form method="GET" class="d-flex  input-group">
+            <form method="GET" class="d-flex">
+              <div class="search_join d-flex" >
                 {% csrf_token %}
                 <datalist id="games">
                   
@@ -322,18 +50,20 @@
                 <button type="submit" id="submit" href="#">
                   <i class="bi bi-search"></i>
                 </button>
+                </div>
             </form>
+              </div>
+                
             </div>
         
-      </div>
         </div>
     
     
     <div style="padding-top: 5px;" class="game-display">
-      <div class="m-4">
+      <div class="innergame">
         <h4 style="color: white;">Showing similar Games to "{{gameShowing}}":</h4>
         <div class="d-flex sort" style="color: white;">
-          <h5 style="margin: auto 10px auto 0px">Sort:</h5>
+          <h5>Sort:</h5>
           <h6 id="Similarity" class="sort-select">Similarity</h6>
           <h6 id="Name">Name</h6>
           <h6 id="Rating">Rating</h6>
@@ -389,13 +119,14 @@
   const buttonLeft = document.getElementById('slideLeft');
   var frag = document.createDocumentFragment();
   const gameName= "{{gameShowing}}".replace("#", "");
+  let width = screen.width -75;
   console.log(gameName)
 
   $(document).on("click", '.right',function(){
-    $('#hold_images').animate({scrollLeft: '+=1000'}, 300);
+    $('#hold_images').animate({scrollLeft: '+='+width}, 300);
   });
   $(document).on("click", '.left', function(){
-    $('#hold_images').animate({scrollLeft: '-=1000'}, 300);
+    $('#hold_images').animate({scrollLeft: '-='+width}, 300);
   });
 
   function openTab(index) {
@@ -454,8 +185,8 @@
                         <h6 style='margin:10px;'> Platform:  ${response['platforms'][index]}</h6>\
                         <h6 style='margin:10px;'> Release: ${element.release_date}</h6>\
                         <h5 style='margin:10px;'> Rating: ${element.meta_score}</h5>\
-                        <h6 style='margin:10px;'> Description: ${element.gameDesc}</h6>\
-                        <div class="d-flex" style="margin-left: 5px;">
+                        <h6 style='margin:10px;'> ${element.gameDesc}</h6>\
+                        <div class="dets-small" style="margin-left: 5px;">
                           <h6 style='margin: 0 5px; padding:0px;'> User Score: ${element.user_score} | </h6>\
                           <h6 style='margin: 0 5px; padding:0px;'> Age: ${element.age_rating} | </h6>\
                           <h6 style='margin: 0 5px; padding:0px;'> Developers: ${element.Devs} | </h6>\
