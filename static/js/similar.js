@@ -8,7 +8,6 @@
   var frag = document.createDocumentFragment();
   const gameName= "{{gameShowing}}".replace("#", "");
   let width = screen.width -75;
-  console.log(gameName)
 
   $(document).on("click", '.right',function(){
     $('#hold_images').animate({scrollLeft: '+='+width}, 300);
@@ -50,41 +49,6 @@
     }
 
   })
-
-  $.ajax({
-    type: 'GET',
-    url: `/similar-games-json/${gameName}/filter%3F{{console}}`,
-    success: function(response){
-      spinnerBox.classList.add('not-visible')
-      response['gameDets'].forEach((element, index) => {
-        img.innerHTML += `
-            <div class='games_div' data-similarity="${index}" data-name="${element.name}" data-rating="${element.meta_score}" data-release="${element.release_date}">
-              <div onclick="openTab(${index})" class="imgDiv">\
-                <img class="my_img" width=230px height=300px src='{% static '' %}games/${response['imgNames'][index]}' alt='${element.name}'>\
-              </div>
-              
-            </div>
-            `
-        dataBox.innerHTML += `
-          <div id='dets${index}' class='details not-visible' style='color: white;'>\
-            <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
-                      <div style='display: block; margin: auto; '>\
-                        <h3 style='margin:10px;'> ${element.name}</h3>\
-                        <h6 style='margin:10px;'> Platform:  ${response['platforms'][index]}</h6>\
-                        <h6 style='margin:10px;'> Release: ${element.release_date}</h6>\
-                        <h5 style='margin:10px;'> Rating: ${element.meta_score}</h5>\
-                        <h6 style='margin:10px;'> ${element.gameDesc}</h6>\
-                        <div class="dets-small" style="margin-left: 5px;">
-                          <h6 style='margin: 0 5px; padding:0px;'> User Score: ${element.user_score} | </h6>\
-                          <h6 style='margin: 0 5px; padding:0px;'> Age: ${element.age_rating} | </h6>\
-                          <h6 style='margin: 0 5px; padding:0px;'> Developers: ${element.Devs} | </h6>\
-                        </div>
-                        
-                        <h6 style='margin:10px;'> Genres: ${element.Genres}</h6>\
-                    </div>\
-              </div>
-        `
-      });
         
 
       //Sorting functions
