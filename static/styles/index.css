@@ -42,7 +42,6 @@ background: -ms-linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F
 background: -o-linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
 animation: 7s rotate linear infinite;
 -webkit-background-clip: text;
--webkit-text-fill-color: transparent;
 font-family: 'Montserrat', sans-serif;
 font-style: normal;
 font-weight: bold;
