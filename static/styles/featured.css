@@ -44,10 +44,13 @@
           }
   
       .title-text{
-        background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-        animation: 7s rotate linear infinite;
+        background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-size: 200% 200%;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -63,8 +66,10 @@
       .sect{
         border-width: 0 0 2px 0;
         border-style: solid;
-        border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-        animation: 3s rotate linear infinite;
+        border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+        -webkit-border-image-slice: 2;
+        border-image-slice: 2;
       }
   
   
@@ -100,8 +105,7 @@
         width: 70%;
         outline: none;
         border: 1px;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-radius: 25px 0 0 25px;
         background-color: rgba(255, 255, 255, 0.344);
         color: white;
         
@@ -131,6 +135,10 @@
       }
       
       #id_platforms{
+          border-radius: 0px;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
         border: none;
         height: 100%;
         width: 100%;
@@ -156,9 +164,13 @@
       border-bottom-right-radius: 25px;
       padding: 8px;
       border: none;
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
       color: white;
+      background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
+        background-size: 200% 200%;
+      
     }
   
   /* Game searched section */
@@ -247,15 +259,10 @@
     line-height: 20px;
     color: #E6E6E6;
     padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(0, 0, 0, 0.357);
     border: 2px solid;
-    border-radius: 5px;
     border-image-slice: 1;
-    --angle: 0deg;
-    /* … */
-    animation: 2s rotate linear infinite;
-    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    border-image-source: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
     padding: 2px 10px;
   
   }
@@ -308,10 +315,13 @@
           }
   
       .title-text{
-        background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-        animation: 7s rotate linear infinite;
+        background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-size: 200% 200%;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -327,8 +337,10 @@
       .sect{
         border-width: 0 0 2px 0;
         border-style: solid;
-        border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-        animation: 3s rotate linear infinite;
+        border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+        -webkit-border-image-slice: 2;
+        border-image-slice: 2;
       }
   
   
@@ -364,8 +376,7 @@
         width: 100%;
         outline: none;
         border: 1px;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-radius: 25px 0 0 25px;
         background-color: rgba(255, 255, 255, 0.344);
         color: white;
         
@@ -395,6 +406,10 @@
       }
       
       #id_platforms{
+        border-radius: 0px;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
         border: none;
         height: 100%;
         width: 100%;
@@ -421,9 +436,12 @@
       border-bottom-right-radius: 25px;
       padding: 8px;
       border: none;
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
       color: white;
+      background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
+    background-size: 200% 200%;
     }
   
   /* Game searched section */
@@ -513,15 +531,10 @@
     color: #E6E6E6;
     margin: 20px;
     padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(0, 0, 0, 0.357);
     border: 2px solid;
-    border-radius: 5px;
     border-image-slice: 1;
-    --angle: 0deg;
-    /* … */
-    animation: 2s rotate linear infinite;
-    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    border-image-source: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
     padding: 2px 10px;
   
   }
@@ -570,10 +583,13 @@
           }
   
       .title-text{
-        background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-        animation: 7s rotate linear infinite;
+        background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-size: 200% 200%;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -589,8 +605,10 @@
       .sect{
         border-width: 0 0 2px 0;
         border-style: solid;
-        border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-        animation: 3s rotate linear infinite;
+        border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+        -webkit-border-image-slice: 2;
+        border-image-slice: 2;
       }
   
   
@@ -626,8 +644,7 @@
         width: 55%;
         outline: none;
         border: 1px;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-radius: 25px 0 0 25px;
         background-color: rgba(255, 255, 255, 0.344);
         color: white;
         
@@ -657,6 +674,10 @@
       }
       
       #id_platforms{
+        border-radius: 0px;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
         border: none;
         height: 100%;
         width: 100%;
@@ -683,9 +704,12 @@
       border-bottom-right-radius: 25px;
       padding: 8px;
       border: none;
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
       color: white;
+      background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
+    background-size: 200% 200%;
     }
   
   /* Game searched section */
@@ -770,15 +794,10 @@
     color: #E6E6E6;
     margin: 20px;
     padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(0, 0, 0, 0.357);
     border: 2px solid;
-    border-radius: 5px;
     border-image-slice: 1;
-    --angle: 0deg;
-    /* … */
-    animation: 2s rotate linear infinite;
-    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    border-image-source: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
     padding: 2px 10px;
   
   }
@@ -832,10 +851,13 @@
           }
   
       .title-text{
-        background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-        animation: 7s rotate linear infinite;
+        background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-size: 200% 200%;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -851,9 +873,11 @@
       .sect{
         border-width: 0 0 2px 0;
         border-style: solid;
-        border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-        animation: 3s rotate linear infinite;
-      }
+        border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+        -webkit-border-image-slice: 2;
+        border-image-slice: 2;
+    }
   
   
       #elems{
@@ -889,8 +913,7 @@
         width: 68%;
         outline: none;
         border: 1px;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-radius: 25px 0 0 25px;
         background-color: rgba(255, 255, 255, 0.344);
         color: white;
         
@@ -920,6 +943,10 @@
       }
       
       #id_platforms{
+        border-radius: 0px;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
         border: none;
         height: 100%;
         width: 100%;
@@ -935,7 +962,7 @@
         background: rgba(0, 0, 0, 0.761);
         color: #fff;
         text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-        font-size: 15px;
+        font-size: 12px;
         font-family: 'Montserrat', sans-serif;
         color: white;
       }
@@ -945,9 +972,13 @@
       border-bottom-right-radius: 25px;
       padding: 8px 15px 8px 15px;
       border: none;
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
       color: white;
+      background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
+    background-size: 200% 200%;
+      
     }
   
   /* Game searched section */
@@ -1031,15 +1062,10 @@
     color: #E6E6E6;
     margin: 20px;
     padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgba(0, 0, 0, 0.357);
     border: 2px solid;
-    border-radius: 5px;
     border-image-slice: 1;
-    --angle: 0deg;
-    /* … */
-    animation: 2s rotate linear infinite;
-    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    border-image-source: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
     padding: 2px 10px;
   
   }
@@ -1083,14 +1109,14 @@
   
       
 
-@property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-  }
+@keyframes rotate {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
 
-  @keyframes rotate {
-    to {
-      --angle: 360deg;
-    }
+@-webkit-keyframes rotate {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }

@@ -39,10 +39,13 @@ a{
           }
   
       .title-text{
-        background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-        animation: 7s rotate linear infinite;
+        background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-size: 200% 200%;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -58,8 +61,10 @@ a{
       .sect{
         border-width: 0 0 2px 0;
         border-style: solid;
-        border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-        animation: 3s rotate linear infinite;
+        border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+        -webkit-border-image-slice: 2;
+        border-image-slice: 2;
       }
   
   
@@ -95,8 +100,7 @@ a{
         width: 70%;
         outline: none;
         border: 1px;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-radius: 25px 0 0 25px;
         background-color: rgba(255, 255, 255, 0.344);
         color: white;
         
@@ -126,6 +130,10 @@ a{
       }
       
       #id_platforms{
+        border-radius: 0px;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
         border: none;
         height: 100%;
         width: 100%;
@@ -151,9 +159,14 @@ a{
       border-bottom-right-radius: 25px;
       padding: 8px;
       border: none;
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
       color: white;
+      background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+      background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+      animation: 5s rotate ease infinite;
+      -webkit-animation: 5s rotate ease infinite;
+      background-size: 200% 200%;
+    
+      
     }
   
 
@@ -181,10 +194,13 @@ a{
   }
 
   .sort-select{
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
+    background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 200% 200%;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -201,7 +217,6 @@ a{
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
-    color: white;
     margin: auto 7px;
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -319,10 +334,13 @@ cursor: pointer;
         }
 
     .title-text{
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% 200%;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: bold;
@@ -338,8 +356,10 @@ cursor: pointer;
     .sect{
       border-width: 0 0 2px 0;
       border-style: solid;
-      border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-      animation: 3s rotate linear infinite;
+      border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+        -webkit-border-image-slice: 2;
+        border-image-slice: 2;
     }
 
 
@@ -375,8 +395,7 @@ cursor: pointer;
       width: 100%;
       outline: none;
       border: 1px;
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
+      border-radius: 25px 0 0 25px;
       background-color: rgba(255, 255, 255, 0.344);
       color: white;
       
@@ -406,6 +425,10 @@ cursor: pointer;
     }
     
     #id_platforms{
+        border-radius: 0px;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
       border: none;
       height: 100%;
       width: 100%;
@@ -432,9 +455,14 @@ cursor: pointer;
     border-bottom-right-radius: 25px;
     padding: 8px;
     border: none;
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
     color: white;
+    background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
+    background-size: 200% 200%;
+  
+    
   }
 
 /* Game searched section */
@@ -461,10 +489,13 @@ cursor: pointer;
   }
 
   .sort-select{
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
+    background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 200% 200%;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -483,7 +514,6 @@ cursor: pointer;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
-    color: white;
     margin: auto 10px;
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -597,10 +627,13 @@ cursor: pointer;
         }
 
     .title-text{
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% 200%;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: bold;
@@ -616,8 +649,10 @@ cursor: pointer;
     .sect{
       border-width: 0 0 2px 0;
       border-style: solid;
-      border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-      animation: 3s rotate linear infinite;
+      border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+        -webkit-border-image-slice: 2;
+        border-image-slice: 2;
     }
 
 
@@ -653,8 +688,7 @@ cursor: pointer;
       width: 55%;
       outline: none;
       border: 1px;
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
+      border-radius: 25px 0 0 25px;
       background-color: rgba(255, 255, 255, 0.344);
       color: white;
       
@@ -684,6 +718,10 @@ cursor: pointer;
     }
     
     #id_platforms{
+        border-radius: 0px;
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
       border: none;
       height: 100%;
       width: 100%;
@@ -710,9 +748,13 @@ cursor: pointer;
     border-bottom-right-radius: 25px;
     padding: 8px;
     border: none;
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
     color: white;
+    background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
+    background-size: 200% 200%;
+    
   }
 
   /* Game searched section */
@@ -735,10 +777,13 @@ cursor: pointer;
   }
 
   .sort-select{
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
+    background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 5s rotate ease infinite;
+    -webkit-animation: 5s rotate ease infinite;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 200% 200%;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -757,7 +802,6 @@ cursor: pointer;
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    color: white;
     margin: auto 15px;
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -871,10 +915,13 @@ cursor: pointer;
               }
       
           .title-text{
-            background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-            animation: 7s rotate linear infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% 200%;
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
             font-weight: bold;
@@ -890,8 +937,10 @@ cursor: pointer;
           .sect{
             border-width: 0 0 2px 0;
             border-style: solid;
-            border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-            animation: 3s rotate linear infinite;
+            border-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+            -webkit-border-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);;
+            -webkit-border-image-slice: 2;
+            border-image-slice: 2;
           }
       
       
@@ -928,8 +977,7 @@ cursor: pointer;
             width: 68%;
             outline: none;
             border: 1px;
-            border-top-left-radius: 25px;
-            border-bottom-left-radius: 25px;
+            border-radius: 25px 0 0 25px;
             background-color: rgba(255, 255, 255, 0.344);
             color: white;
             
@@ -959,6 +1007,10 @@ cursor: pointer;
           }
           
           #id_platforms{
+            border-radius: 0px;
+            -moz-appearance: none; 
+            -webkit-appearance: none; 
+            appearance: none;
             border: none;
             height: 100%;
             width: 100%;
@@ -984,9 +1036,14 @@ cursor: pointer;
           border-bottom-right-radius: 25px;
           padding: 8px 15px 8px 15px;
           border: none;
-          background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-          animation: 7s rotate linear infinite;
           color: white;
+          background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
+        background-size: 200% 200%;
+      
+          
         }
       
       
@@ -1010,10 +1067,13 @@ cursor: pointer;
           }
       
           .sort-select{
-            background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-            animation: 7s rotate linear infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        background-image: -webkit-linear-gradient(0deg, #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+        animation: 5s rotate ease infinite;
+        -webkit-animation: 5s rotate ease infinite;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% 200%;
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
             font-weight: 400;
@@ -1032,7 +1092,6 @@ cursor: pointer;
             font-style: normal;
             font-weight: 400;
             font-size: 17px;
-            color: white;
             margin: auto 15px;
             transition: all .2s ease-in-out;
             cursor: pointer;
@@ -1125,15 +1184,14 @@ cursor: pointer;
   }
 
 /***************************************************************/
-
-@property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-  }
-
 @keyframes rotate {
-to {
-  --angle: 360deg;
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
 }
-}}
+
+@-webkit-keyframes rotate {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
