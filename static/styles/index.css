@@ -35,9 +35,12 @@ a{
 }
 
 .title-text{
-background-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-background-image: -webkit-linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-animation: 7s rotate linear infinite;
+    background: #000000;
+    background: -moz-linear-gradient(var(--angle),  #000000 0%, #f12711 -4.04%, #f33c14 34.46%, #f5af19 83.03%);
+    background: -webkit-linear-gradient(var(--angle),  #000000 0%,#f12711 -4.04%,#f33c14 34.46%,#f5af19 83.03%);
+    background: linear-gradient(var(--angle),  #000000 0%,#f12711 -4.04%,#f33c14 34.46%,#f5af19 83.03%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#f5af19',GradientType=0 );
+    animation: 7s rotate linear infinite;
 -webkit-background-clip: text;
 -moz-background-clip: text;
 -webkit-text-fill-color: transparent;
