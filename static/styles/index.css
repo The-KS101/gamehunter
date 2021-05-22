@@ -36,9 +36,9 @@ a{
 
 .title-text{
     background: #000000;
-    background: -moz-linear-gradient(var(--angle),  #000000 0%, #f12711 -4.04%, #f33c14 34.46%, #f5af19 83.03%);
-    background: -webkit-linear-gradient(var(--angle),  #000000 0%,#f12711 -4.04%,#f33c14 34.46%,#f5af19 83.03%);
-    background: linear-gradient(var(--angle),  #000000 0%,#f12711 -4.04%,#f33c14 34.46%,#f5af19 83.03%);
+    background: -moz-linear-gradient(#000000 0%, #f12711 -4.04%, #f33c14 34.46%, #f5af19 83.03%);
+    background: -webkit-linear-gradient(#000000 0%,#f12711 -4.04%,#f33c14 34.46%,#f5af19 83.03%);
+    background: linear-gradient(#000000 0%,#f12711 -4.04%,#f33c14 34.46%,#f5af19 83.03%);
     animation: 7s rotate linear infinite;
 -webkit-background-clip: text;
 -moz-background-clip: text;
