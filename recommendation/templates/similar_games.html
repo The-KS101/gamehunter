@@ -120,7 +120,6 @@
   var frag = document.createDocumentFragment();
   const gameName= "{{gameShowing}}".replace("#", "");
   let width = screen.width -75;
-  console.log(gameName)
 
   $(document).on("click", '.right',function(){
     $('#hold_images').animate({scrollLeft: '+='+width}, 300);
