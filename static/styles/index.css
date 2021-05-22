@@ -1,0 +1,578 @@
+html{
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    background-size: cover;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+/********************************** Media Query for Mobile Devices ********************************/
+@media (max-width: 480px) {
+/* Navigation bar styling */
+.nav{
+    width: 95%;
+    margin: 15px auto;
+}
+
+.title-text{
+background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+animation: 7s rotate linear infinite;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 21px;
+line-height: 36px;
+}
+
+
+#elems:hover{
+    transform: scale(1.05);
+}
+
+.nav-links #elems{
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#login{
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-image-slice: 1;
+    --angle: 0deg;
+    /* … */
+    animation: 2s rotate linear infinite;
+    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    padding: 2px 10px;
+
+}
+
+#frame{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10.6965px 25.6716px;
+    border-radius: 42.786px;
+
+}
+
+
+/*Hero Text styling*/
+.hero-div{
+    flex: 2;
+}
+.hero{
+    margin:auto;
+}
+
+.hero-head{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 50px;
+    color: #E6E6E6;
+}
+
+.hero-text{
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+
+    color: #E6E6E6;
+}
+
+.hero-search{
+}
+
+.hero-search form{
+    margin-top: 20px;
+}
+
+#id_gameName{
+    width: 70%;
+    
+    outline: none;
+    border: 1px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.344);
+    color: white;
+    
+}
+
+#id_gameName[type="text"]{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#id_gameName::placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-input-placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-value{
+    color: white;
+}
+
+
+#submit{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 7s rotate linear infinite;
+    color: white;
+}
+}
+    
+/********************************** Media Query for low resolution  Tablets, Ipads ****************/
+@media (min-width: 481px) and (max-width: 767px) {
+/* Navigation bar styling */
+.nav{
+    width: 92%;
+    margin: 20px auto;
+}
+
+.title-text{
+background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+animation: 7s rotate linear infinite;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 29.1837px;
+line-height: 36px;
+}
+
+#elems:hover{
+    transform: scale(1.05);
+}
+
+.nav-links #elems{
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 18px;
+}
+
+#login{
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-image-slice: 1;
+    --angle: 0deg;
+    /* … */
+    animation: 2s rotate linear infinite;
+    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    padding: 2px 10px;
+
+}
+
+#frame{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10.6965px 25.6716px;
+    border-radius: 42.786px;
+
+}
+
+
+/*Hero Text styling*/
+.hero-div{
+    flex: 2;
+}
+.hero{
+    margin:auto;
+}
+
+.hero-head{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+
+    color: #E6E6E6;
+}
+
+.hero-text{
+    margin: 15px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 15px;
+
+    color: #E6E6E6;
+}
+
+.hero-search{
+}
+
+.hero-search form{
+    margin-top: 20px;
+}
+
+#id_gameName{
+    width: 50%;
+    
+    outline: none;
+    border: 1px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.344);
+    color: white;
+    
+}
+
+#id_gameName[type="text"]{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#id_gameName::placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-input-placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-value{
+    color: white;
+}
+
+
+#submit{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 7s rotate linear infinite;
+    color: white;
+}
+}
+
+/********************************** Media Query for Tablets Ipads portrait mode *******************/
+@media (min-width: 768px) and (max-width: 1022px){
+/* Navigation bar styling */
+.nav{
+    width: 85%;
+    margin: 20px auto;
+}
+
+.title-text{
+background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+animation: 7s rotate linear infinite;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 29.1837px;
+line-height: 36px;
+}
+
+#elems:hover{
+    transform: scale(1.1);
+}
+
+.nav-links #elems{
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 18px;
+}
+
+/*Hero Text styling*/
+.hero-div{
+    flex: 2;
+}
+.hero{
+    margin:auto;
+}
+
+.hero-head{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 91px;
+
+    color: #E6E6E6;
+}
+
+.hero-text{
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #E6E6E6;
+}
+
+.hero-search{
+}
+
+.hero-search form{
+    margin-top: 35px;
+}
+
+#id_gameName{
+    width: 50%;
+    
+    outline: none;
+    border: 1px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.344);
+    color: white;
+    
+}
+
+#id_gameName[type="text"]{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#id_gameName::placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-input-placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-value{
+    color: white;
+}
+
+
+#submit{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 7s rotate linear infinite;
+    color: white;
+}
+}
+
+/********************************** Media Query for Laptops and Desktops **************************/
+@media (min-width: 1023px){
+/* Navigation bar styling */
+.nav{
+    width: 85%;
+    margin: 20px auto;
+}
+
+.title-text{
+background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+animation: 7s rotate linear infinite;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 29.1837px;
+line-height: 36px;
+}
+
+#elems:hover{
+    transform: scale(1.1);
+}
+
+.nav-links #elems{
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 18px;
+}
+
+#login{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-image-slice: 1;
+    --angle: 0deg;
+    /* … */
+    animation: 2s rotate linear infinite;
+    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    padding: 2px 10px;
+
+}
+
+#frame{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10.6965px 25.6716px;
+    border-radius: 42.786px;
+
+}
+
+
+/*Hero Text styling*/
+.hero-div{
+    flex: 2;
+}
+.hero{
+    margin:auto;
+}
+
+.hero-head{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 75px;
+    line-height: 91px;
+
+    color: #E6E6E6;
+}
+
+.hero-text{
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #E6E6E6;
+}
+
+.hero-search{
+}
+
+.hero-search form{
+    margin-top: 50px;
+}
+
+#id_gameName{
+    width: 50%;
+    
+    outline: none;
+    border: 1px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.344);
+    color: white;
+    
+}
+
+#id_gameName[type="text"]{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#id_gameName::placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-input-placeholder{
+    color: white;
+}
+
+#id_gameName::-ms-value{
+    color: white;
+}
+
+
+#submit{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
+    animation: 7s rotate linear infinite;
+    color: white;
+}
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}

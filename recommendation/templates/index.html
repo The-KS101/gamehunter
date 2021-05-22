@@ -1,275 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Hunt</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
+  {% load static %}
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Game Hunt</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
 
-<style>
-  html{
-    height: 100%;
-  }
-  body {
-  height: 100%;
-  margin:0;
-  padding:0;
-  font-family: sans-serif;
-
-  }
-  a{
-      text-decoration: none;
-      color: white;
-    }
-
-  .home{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
-    background-image: linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero1.jpg'%}");
-    background-image: -moz-linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero1.jpg'%}");
-    background-image: -webkit-linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero1.jpg'%}");
-    background-image: -o-linear-gradient(#141e306b, #243b5574), url("{%static 'assets/hero1.jpg'%}");
-    background-size: cover;
-  }
-
-  /* Navigation bar styling */
-  .nav{
-    width: 85%;
-    margin: 20px auto;
-  }
-
-  .title-text{
-  background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-  animation: 7s rotate linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 29.1837px;
-  line-height: 36px;
-  }
-
-  .nav-links{
-    color: white;
-  }
-
-  .nav-links #elems{
-    margin-left: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 18px;
-  }
-
-  #login{
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 12px;
-    border: 2px solid;
-    border-radius: 5px;
-    border-image-slice: 1;
-    --angle: 0deg;
-    /* … */
-    animation: 2s rotate linear infinite;
-    border-image-source: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    padding: 2px 10px;
-
-  }
-
-  #frame{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10.6965px 25.6716px;
-    border-radius: 42.786px;
-
-  }
-
-
-  /*Hero Text styling*/
-  .hero-div{
-    flex: 2;
-  }
-  .hero{
-    margin:auto;
-  }
-
-  .hero-head{
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 75px;
-    line-height: 91px;
-
-    color: #E6E6E6;
-  }
-
-  .hero-text{
-    margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-
-    color: #E6E6E6;
-  }
-
-  .hero-search{
-  }
-
-  .hero-search form{
-    margin-top: 50px;
-  }
-
-  #id_gameName{
-    width: 50%;
-    
-    outline: none;
-    border: 1px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.344);
-    color: white;
-    
-  }
-
-  #id_gameName[type="text"]{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding-left: 20px;
-    font-weight: 400;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-  }
-
-  #id_gameName::placeholder{
-    color: white;
-  }
-
-  #id_gameName::-ms-input-placeholder{
-    color: white;
-  }
-
-  #id_gameName::-ms-value{
-    color: white;
-  }
-
-
-  #submit{
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 8px 15px 8px 15px;
-    border: none;
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
-    color: white;
-  }
-  @property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-  }
-
-  @keyframes rotate {
-  to {
-    --angle: 360deg;
-  }
-}}
-</style>
-
-<body>
-    <div class='home'>
-      <!--Navigation Bar section-->
-      <div class="nav navbar">
-        <div class="title">
-          <a href="/" style="text-decoration: none;"><h4 class="title-text">gamehunt</h4></a>
-        </div>
-        <!--Nav bar Hyperlinks-->
-        <div class="nav-links d-flex ">
-          <h6 id="elems"><a href="{% url 'about' %}">About</a> </h6>
-          <h6 id="elems" ><a href="{% url 'featured_games' %}">Featured Games</a></h6>
-          
-          
+  <body>
+      <div class='home' style="background-image: linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero1.jpg'%}); background-image: -moz-linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero1.jpg'%}); background-image: -webkit-linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero1.jpg'%}); background-image: -o-linear-gradient(#141e306b, #243b5574), url({%static 'assets/hero1.jpg'%} ;">
+        <!--Navigation Bar section-->
+        <div class="nav navbar">
+          <div class="title">
+            <a href="/" style="text-decoration: none;"><h4 class="title-text">gamehunt</h4></a>
+          </div>
+          <!--Nav bar Hyperlinks-->
+          <div class="nav-links d-flex ">
+            <h6 id="elems"><a href="{% url 'about' %}">About</a></h6>
+            <h6 id="elems" ><a href="{% url 'featured_games' %}">Featured Games</a></h6>
+          </div>
         </div>
 
-      </div>
-
-      <div class="container-fluid d-flex flex-column hero-div" style="height: 70%;">
-        <div class="text-center hero">
-          <h5 class="hero-head">Games for everyone.</h5>
-          <p class="hero-text">Let us find the next game for you.</p>
-          <div class="hero-search">
-            <form method="GET" class="d-flex justify-content-center input-group">
+        <div class="container-fluid d-flex flex-column hero-div" style="height: 70%;">
+          <div class="text-center hero">
+            <h5 class="hero-head">Games for everyone.</h5>
+            <p class="hero-text">Let us find the next game for you.</p>
+            <div class="hero-search">
+              <form method="GET" class="d-flex justify-content-center input-group">
                 {% csrf_token %}
                 <datalist id="games">
                   
                 </datalist>
-                
-                {{form.gameName}}
 
+                {{form.gameName}}
                 <button type="submit" id="submit" href="#">
                   <i class="bi bi-search"></i>
                 </button>
-            </form>
+              </form>
+            </div>
+          </div>
         </div>
-        </div>
-
-        
-
-      </div>
-    
-      <div class="container-fluid pt-3">
-        <footer style="color: white; font-family: 'Montserrat', sans-serif;">
-          <p class="text-center">Developed with 💖 by <a style="color: white; text-decoration: underline;" target="_blank" href="https://sesan.netlify.app"><span> Sesan</span></a> </p>
+      
+        <div class="container-fluid pt-3">
+          <footer style="color: white; font-family: 'Montserrat', sans-serif;">
+            <p class="text-center">Developed with 💖 by <a style="color: white; text-decoration: underline;" target="_blank" href="https://sesan.netlify.app"><span> Sesan</span></a> </p>
           </footer>
-      </div>
-    
-    
-  </div>
-
-</body>
+        </div>
+    </div>
+  </body>
+  <script src="{% static 'js/index.js' %}"></script>
 </html>
-
-<script>
-  const games = document.getElementById('games')
-  var frag = document.createDocumentFragment();
-
-  $.ajax({
-    type: 'GET',
-    url: '/games-json',
-    success: function(response){
-      for (const item of response){
-        var option = document.createElement("OPTION");
-        option.textContent = item;
-        option.value = item;
-        frag.appendChild(option);
-      }
-
-      games.appendChild(frag)
-},
-    error: function(response){
-      dataBox.innerHTML = '<p>Failed to get Similar Games, please try again later.</p>'
-    }
-
-  })
-</script>
-
-

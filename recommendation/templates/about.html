@@ -13,245 +13,51 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{% static 'styles/featured.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     
 </head>
-<style>
-    
-    a{
-      text-decoration: none;
-      color: white;
-    }
-    
-    html{
-      height: 100%;
-    }
-    body {
-    height: 100%;
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
-
-    }
-    .home{
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      min-height: 100%;
-      background-image: linear-gradient(#00000091, #00000091), url("{%static 'assets/hero4.jpg'%}");
-      background-image: -moz-linear-gradient(#00000091, #00000091), url("{%static 'assets/hero4.jpg'%}");
-      background-image: -webkit-linear-gradient(#00000091, #00000091), url("{%static 'assets/hero4.jpg'%}");
-      background-image: -o-linear-gradient(#00000091, #00000091), url("{%static 'assets/hero4.jpg'%}");
-      background-size: cover;
-    }
-
-    /*Nav bar section*/
-    .nav{
-      width: 95%;
-      margin: 20px auto;
-    }
-
-    .titleElem{
-          flex: 1;
-        }
-
-    .title-text{
-      background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-      animation: 7s rotate linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 29.1837px;
-      line-height: 36px;
-    }
-
-    .nav-links{
-      flex: 2;
-    }
-
-    #elems:first-of-type{
-      border-width: 0 0 2px 0;
-      border-style: solid;
-      border-image: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%) 1;
-      animation: 3s rotate linear infinite;
-    }
-
-
-    #elems{
-      margin: auto;
-      padding: 2px;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 17px;
-      color: white;
-      
-    }
-
-    /*Nav Search section*/
-    .hero-search{
-      flex: 4;
-    }
-
-    .hero-search form{
-      width: 100%;
-    }
-
-    #id_gameName{
-      width: 70%;
-      border: 2px solid red;;
-      outline: none;
-      border: 1px;
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-      background-color: rgba(255, 255, 255, 0.344);
-      color: white;
-      
-    }
-
-    #id_gameName[type="text"]{
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      padding-left: 20px;
-      font-weight: 400;
-      font-size: 15px;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-    }
-
-    #id_gameName::placeholder{
-      color: white;
-    }
-
-    #id_gameName::-ms-input-placeholder{
-      color: white;
-    }
-
-    #id_gameName::-ms-value{
-      color: white;
-    }
-    
-    #id_platforms{
-      border: none;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.344);
-      color: white;
-      font-size: 15px;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-    }
-
-    #id_platforms option{
-      background: rgba(0, 0, 0, 0.761);
-      color: #fff;
-      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-      font-size: 15px;
-      font-family: 'Montserrat', sans-serif;
-      color: white;
-    }
-
-    #submit{
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 8px 15px 8px 15px;
-    border: none;
-    background: linear-gradient(var(--angle), #F12711 -4.04%, #F33C14 34.46%, #F5AF19 83.03%);
-    animation: 7s rotate linear infinite;
-    color: white;
-  }
-
-/* Game searched section */
-    .game-display{
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 29px;
-      flex: 2;
-      color: #E6E6E6;
-    }
-    .pageHead{
-      text-align: center;
-      text-decoration: underline;
-    }
-
-
-    /*******EXPERIMENT************************************/
-
-#hold_images{
-  margin: 20px auto 0 auto;
-  display: flex;
-  min-height: 70%;
-}
-
-#hold_images p{
-    margin: 60px;
-    font-weight: 300;
-    font-size: 21px;
-    line-height: 29px;
-}
-
-.abt{
-    height: 65%;
-}
-
-/***************************************************************/
-
-    @property --angle {
-      syntax: '<angle>';
-      initial-value: 0deg;
-      inherits: false;
-    }
-
-  @keyframes rotate {
-  to {
-    --angle: 360deg;
-  }
-}}
-
-    </style>
 
 <body>
-    <div class="home">
-      <!--Navigation Bar section-->
-      <div class="nav navbar">
-        <div class="d-flex w-100">
-          <div class="titleElem">
-            <a href="/" style="text-decoration: none;"><h4 class="title-text">gamehunt</h4></a>
-          </div>
-          <div class="nav-links d-flex ">
-            <h6 id="elems"><a href="{% url 'about' %}">About</a> </h6>
-            <h6 id="elems"><a href="{% url 'featured_games' %}">Featured Games</a></h6>
-            <!-- <div id='elems frame' style="margin-left: 25px;"><h6 id="login">Login</h6></div> -->
-            
-          </div>
-        <!--Nav bar Search-->
-          <div class="hero-search">
-            <form method="GET" class="d-flex  input-group">
-                {% csrf_token %}
-                <datalist id="games">
-                  
-                </datalist>
-                
-                {{form.gameName}}
-                <div class="plat">
-                  {{form.platforms}}
-                </div>
-                
-                <button type="submit" id="submit" href="#">
-                  <i class="bi bi-search"></i>
-                </button>
-            </form>
+    <div class="home" style="background-image: linear-gradient(#00000091, #00000091), url({%static 'assets/hero4.jpg'%}); background-image: -moz-linear-gradient(#00000091, #00000091), url({%static 'assets/hero4.jpg'%}); background-image: -webkit-linear-gradient(#00000091, #00000091), url({%static 'assets/hero4.jpg'%}); background-image: -o-linear-gradient(#00000091, #00000091), url({%static 'assets/hero4.jpg'%} ;">
+        <!--Navigation Bar section-->
+        <div class="nav navbar">
+          <div class="d-flex w-100 navigate">
+            <div class="titleElem">
+              <a href="/" style="text-decoration: none;"><h4 class="title-text">gamehunt</h4></a>
             </div>
-        
-      </div>
+            <div class="nav-links d-flex ">
+              <h6 id="elems" class="sect"><a href="{% url 'about' %}">About</a> </h6>
+              <h6 id="elems"><a href="{% url 'featured_games' %}">Featured Games</a></h6>
+              <!-- <div id='elems frame' style="margin-left: 25px;"><h6 id="login">Login</h6></div> -->
+              
+            </div>
+          <!--Nav bar Search-->
+            <div class="hero-search">
+              <form method="GET" class="d-flex">
+                <div class="search_join d-flex" >
+                  {% csrf_token %}
+                  <datalist id="games">
+                    
+                  </datalist>
+                  
+                  {{form.gameName}}
+                  <div class="plat">
+                    {{form.platforms}}
+                  </div>
+                  
+                  <button type="submit" id="submit" href="#">
+                    <i class="bi bi-search"></i>
+                  </button>
+              </form>
+                </div>
+                  
+              </div>
+          
         </div>
+          </div>
     
     <!-- Hero Section -->
     <div style="padding-top: 5px;" class="game-display">
@@ -260,7 +66,7 @@
       </div>
         <div class='d-flex mt-3 abt'>
     
-            <div id="hold_images">
+            <div id="hold_text">
                 <p>We help you find yor next game based on titles you love. Game Hunt uses Natural Language Processing to determine the games that are similar to any game you search for. Our database has a vast amount of games ensuring that users have a wide variety of games to have fun with. So go find the next game you'll spend hours on and have fun. ☺☺☺</p>
                 <p>I had a lot of fun working on this and I hope you have fun and find games you love right here. Till next time, Ciao.😬😬</p> 
             </div>
@@ -279,29 +85,4 @@
 </body>
 </html>
 
-
-<script>
-  const games = document.getElementById('games')
-  var frag = document.createDocumentFragment();
-
-  $.ajax({
-    type: 'GET',
-    url: '/games-json',
-    success: function(response){
-      for (const item of response){
-        var option = document.createElement("OPTION");
-        option.textContent = item;
-        option.value = item;
-        frag.appendChild(option);
-      }
-
-      games.appendChild(frag)
-},
-
-error: function(response){
-      console.log(response)
-    }
-
-});
-
-</script>
+<script src="{% static 'js/index.js' %}"></script>
